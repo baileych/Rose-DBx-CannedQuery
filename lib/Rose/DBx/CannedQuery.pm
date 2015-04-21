@@ -196,7 +196,7 @@ Rose::DBx::CannedQuery - Conveniently manage a specific SQL query
 
 This class provides a convenient means to execute specific queries
 against a database fronted by L<Rose::DB> subclasses, in a manner
-similar to (and I hope a bit more flexible than) the DBI's
+similar to (and I hope a bit more flexible than) the 
 L<DBI/selectall_arrayref> method.  You can set up the query once, then
 execute it whenever you need to, without worrying about the mechanics
 of the database connection.
@@ -223,14 +223,14 @@ create the L<Rose::DB> object.  The L</rdb_params> attribute B<must>
 be a hash reference, the single-argument shortcut allowed by
 L<Rose::DB> to specify just a data source C<type> is not supported.
 
-When the L<Rose::DB>>-derived object is created, the information in
+When the L<Rose::DB>-derived object is created, the information in
 F<rdb_params> will be merged with the class' default attributes, with
 attributes in F<rdb_params> taking precedence. You may omit
 L</rdb_params> if L</rdb_class> has default domain and type values
 that point to a specific datasource; if this isn't the case,
 L<Rose::DB> will die noisily.
 
-F<Rose::DBx::CannedQuery> provides a small set of defaults:
+L<Rose::DBx::CannedQuery> provides a small set of defaults:
 
   { connect_options =>
      { RaiseError => 1,
@@ -244,7 +244,7 @@ merged parameters are then passed to the L</rdb_class>'
 F<new_or_cached> constructor.
 
 If a L<Rose::DBx::CannedQuery> object was created by passing in a
-L<Rose::DB> database handle directly, the F<rdb_params> attribute
+L<Rose::DB> database handle directly, the L</rdb_params> attribute
 will return C<type> and C<domain> information only; if you want
 more information about the handle, you can call L<Rose::DB> accessor
 methods on it directly.
@@ -253,13 +253,13 @@ methods on it directly.
 
 This is the L<Rose::DB>-derived object ("handle") managing the
 database connection.  It may be supplied at connection time instead of
-the F<rdb_class> and F<rdb_params> parameters, if you want to make
+the L</rdb_class> and L</rdb_params> parameters, if you want to make
 use of an already-constructed database handle.
 
 =back
 
 One or the other of these attribute sets must be provided when
-creating a F<Rose::DBx::CannedQuery> object.
+creating a L<Rose::DBx::CannedQuery> object.
 
 Other attributes are:
 
